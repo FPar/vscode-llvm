@@ -1,0 +1,132 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "LLVM Intermediate Representation",
+	"patterns": [
+		{
+			"name": "comment.line.semicolon.llvm",
+			"begin": ";",
+			"end": "(?=$)"
+		},
+		{
+			"name": "string.quoted.double.llvm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.llvm",
+					"match": "\\\\."
+				}
+			]
+		},
+		{
+			"name": "variable.other.value.llvm",
+			"match": "%[._[:alnum:]]+"
+		},
+		{
+			"name": "entity.name.function.llvm",
+			"match": "@[._[:alnum:]]+"
+		},
+		{
+			"name": "entity.name.section.basicblock.llvm",
+			"match": "^[._[:alnum:]]+:"
+		},
+		{
+			"name": "variable.other.metadata.llvm",
+			"match": "![[:digit:]]+\\b"
+		},
+		{
+			"name": "storage.type.metadata.llvm",
+			"match": "![_[:alpha:]]+\\b"
+		},
+		{
+			"name": "storage.type.constant.llvm",
+			"match": "\\bconstant\\b"
+		},
+		{
+			"name": "storage.type.global.llvm",
+			"match": "\\bglobal\\b"
+		},
+		{
+			"name": "storage.type.function.llvm",
+			"match": "\\bfunction\\b"
+		},
+		{
+			"name": "storage.type.declare.llvm",
+			"match": "\\bdeclare\\b"
+		},
+		{
+			"name": "storage.type.define.llvm",
+			"match": "\\bdefine\\b"
+		},
+		{
+			"name": "storage.modifier.internal.llvm",
+			"match": "\\binternal\\b"
+		},
+		{
+			"name": "storage.modifier.internal.llvm",
+			"match": "\\bexternal\\b"
+		},
+		{
+			"name": "storage.type.void.llvm",
+			"match": "\\bvoid\\b"
+		},
+		{
+			"name": "storage.type.integer.llvm",
+			"match": "\\b(i[[:digit:]]+)\\b"
+		},
+		{
+			"name": "keyword.other.type.llvm",
+			"match": "\\btype\\b"
+		},
+		{
+			"name": "keyword.operator.conversion.to.llvm",
+			"match": "\\bto\\b"
+		},
+		{
+			"name": "keyword.other.instruction.terminator.llvm",
+			"match": "\\b(ret|br|switch|indirectbr|invoke|callbr|resume|catchswitch|catchret|cleanupret|unreachable)\\b"
+		},
+		{
+			"name": "keyword.other.instruction.llvm",
+			"match": "\\b(icmp|fcmp|phi|select|freeze|call|va_arg|landingpad|catchpad|cleanuppad)\\b"
+		},
+		{
+			"name": "keyword.other.instruction.unary.llvm",
+			"match": "\\bfneg\\b"
+		},
+		{
+			"name": "keyword.other.instruction.binary.llvm",
+			"match": "\\b(add|fadd|sub|fsub|mul|fmul|udiv|sdiv|fdiv|urem|srem|frem)\\b"
+		},
+		{
+			"name": "keyword.other.instruction.binary.bitwise.llvm",
+			"match": "\\b(shl|lshr|ashr|and|or|xor)\\b"
+		},
+		{
+			"name": "keyword.other.instruction.vector.llvm",
+			"match": "\\b(extractelement|insertelement|shufflevector)\\b"
+		},
+		{
+			"name": "keyword.other.instruction.aggregate.llvm",
+			"match": "\\b(extractvalue|insertvalue)\\b"
+		},
+		{
+			"name": "keyword.other.instruction.memory.llvm",
+			"match": "\\b(alloca|load|store|fence|cmpxchg|atomicrmw|getelementptr)\\b"
+		},
+		{
+			"name": "keyword.other.instruction.conversion.llvm",
+			"match": "\\b(trunc|zext|sext|fptrunc|fpext|fptoui|fptosi|uitofp|sitofp|ptrtoint|inttoptr|bitcast|addrspacecast)\\b"
+		},
+		{
+			"name": "keyword.other.metadata.llvm",
+			"match": "\\bmetadata\\b"
+		},
+		{
+			"name": "constant.numeric",
+			"match": "\\b[[:digit:]]+\\b"
+		}
+	],
+	"repository": {},
+	"scopeName": "source.llvm"
+}

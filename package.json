@@ -1,0 +1,39 @@
+{
+    "name": "llvm",
+    "displayName": "LLVM",
+    "description": "LLVM Syntax Highlighting",
+    "publisher": "Fabian Parzefall",
+    "author": {
+        "name": "Fabian Parzefall",
+        "email": "fparzefall@mailbox.org"
+    },
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "llvm",
+                "aliases": [
+                    "LLVM Intermediate Representation",
+                    "llvm"
+                ],
+                "extensions": [
+                    ".ll"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "llvm",
+                "scopeName": "source.llvm",
+                "path": "./syntaxes/llvm.tmLanguage.json"
+            }
+        ]
+    }
+}
